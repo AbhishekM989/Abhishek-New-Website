@@ -597,6 +597,7 @@ img{
     width: max-content;
     color: var(--first-color);
     font-size: var(--normal-font-size);
+    display: flex;
     align-items: center;
     column-gap: .25rem;
 }
