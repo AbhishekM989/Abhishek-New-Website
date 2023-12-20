@@ -110,7 +110,7 @@ sr.reveal(`.home__handle`, {delay: 700})
 sr.reveal(`.home__social`, {delay: 900, origin: 'bottom'})
 
 /*=============== LOADING ANIMATION ===============*/
-var preloader = document.getElementById('loading');
+var preloader = document.getElementsByClassName('loading');
 function myFunction(){
     preloader.style.display = 'none';
 }
