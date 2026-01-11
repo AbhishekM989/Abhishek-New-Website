@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2a2a3f, #0c0f1d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* =====================
+   WRAPPER
+===================== */
+
+.launch-wrapper {
+  text-align: center;
+  padding: 24px;
+}
+
+.launch-wrapper h1 {
+  letter-spacing: 6px;
+  font-size: 1.2rem;
+  margin-bottom: 48px;
+  opacity: 0.95;
+}
+
+/* =====================
+   COUNTDOWN LAYOUT
+===================== */
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* =====================
+   TIME CARD
+===================== */
+
+.time-box {
+  width: 130px;
+  height: 160px;
+  background: linear-gradient(180deg, #2f314d, #23243a);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================
+   TOP HALF (NUMBER)
+===================== */
+
+.time-top {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* split line */
+.time-top::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* number */
+.flip-num {
+  display: inline-block;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ff5a7a;
+  line-height: 1;
+  transform-origin: center bottom;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+/* flip state */
+.flip-num.flip {
+  transform: rotateX(90deg);
+  opacity: 0;
+}
+
+/* =====================
+   BOTTOM HALF (LABEL)
+===================== */
+
+.time-bottom {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  opacity: 0.75;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .countdown {
+    gap: 18px;
+  }
+
+  .flip-num {
+    font-size: 2.8rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 700px) {
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .time-box {
+    width: 100%;
+    height: 130px;
+  }
+
+  .flip-num {
+    font-size: 2.4rem;
+  }
+
+  .launch-wrapper h1 {
+    font-size: 1rem;
+    margin-bottom: 36px;
+  }
+}
