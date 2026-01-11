@@ -117,5 +117,5 @@ function myFunction(){
 
 const MAINTENANCE_MODE = true;
 if (MAINTENANCE_MODE) {
-    window.location.replace = ("/maintenance.html");
+    window.location.href = "./maintenance.html";
 }
