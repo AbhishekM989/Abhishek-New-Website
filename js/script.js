@@ -114,3 +114,8 @@ var preloader = document.getElementById('loading');
 function myFunction(){
     preloader.style.display = 'none';
 }
+
+const MAINTENANCE_MODE = true;
+if (MAINTENANCE_MODE) {
+    window.location.replace = ("/maintenance.html");
+}
